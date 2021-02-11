@@ -1,15 +1,20 @@
 from turtle import Turtle, Screen
 import random
 
-
 screen = Screen()
 tim = Turtle()
-tim.shape("turtle")
-tim.color("red")
-print(tim.position())
-tim.up()
-tim.sety(-300)
-tim.down()
+
+
+def set_shape_and_color(turtle):
+    turtle.shape("turtle")
+    turtle.color("red")
+
+
+def set_position(turtle):
+    print(turtle.position())
+    turtle.up()
+    turtle.sety(-300)
+    turtle.down()
 
 
 def draw_square():
@@ -28,22 +33,24 @@ def draw_alternate_line():
         tim.down()
 
 
-#draw_square()
-def draw_polygon(sides):
-    angle = 360 / sides
+def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
     screen.colormode(255)
-    tim.color(r, g, b)
+    return r, g, b
+
+
+def draw_polygon(sides):
+    """draws a polygon with n sides and random colors"""
+    angle = 360 / sides
+    tim.color(random_color())
     for _ in range(sides):
         tim.forward(100)
         tim.left(angle)
 
-
-for _ in range(3, 15):
-    draw_polygon(_)
-
+def draw_polygons(number_of_polygons):
+    for _ in range(3, number_of_polygons):
+        draw_polygon(_)
 
 screen.exitonclick()
-
