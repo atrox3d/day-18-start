@@ -65,12 +65,12 @@ def draw_circle(radius, heading, *color):
     tim.circle(radius)
 
 
-def draw_spyrograph():
+def draw_spyrograph(gap):
     tim.speed(0)
-    for _ in range(1, 360, 10):
+    for _ in range(1, 360, gap):
         draw_circle(100, _, *random_color())
 
 
-draw_spyrograph()
+draw_spyrograph(5)
 
 screen.exitonclick()
