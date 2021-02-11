@@ -6,6 +6,10 @@ screen = Screen()
 tim = Turtle()
 tim.shape("turtle")
 tim.color("red")
+print(tim.position())
+tim.up()
+tim.sety(-300)
+tim.down()
 
 
 def draw_square():
@@ -37,7 +41,7 @@ def draw_polygon(sides):
         tim.left(angle)
 
 
-for _ in range(3, 11):
+for _ in range(3, 15):
     draw_polygon(_)
 
 
