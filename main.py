@@ -52,8 +52,25 @@ def draw_polygon(sides):
         tim.forward(100)
         tim.left(angle)
 
+
 def draw_polygons(number_of_polygons):
     for _ in range(3, number_of_polygons):
         draw_polygon(_)
+
+
+def draw_circle(radius, heading, *color):
+    tim.setheading(heading)
+    screen.colormode(255)
+    tim.color(*color)
+    tim.circle(radius)
+
+
+def draw_spyrograph():
+    tim.speed(0)
+    for _ in range(1, 360, 10):
+        draw_circle(100, _, *random_color())
+
+
+draw_spyrograph()
 
 screen.exitonclick()
