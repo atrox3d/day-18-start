@@ -1,5 +1,8 @@
 from turtle import Turtle, Screen
+import random
 
+
+screen = Screen()
 tim = Turtle()
 tim.shape("turtle")
 tim.color("red")
@@ -22,10 +25,13 @@ def draw_alternate_line():
 
 
 #draw_square()
-
 def draw_polygon(sides):
     angle = 360 / sides
-    print(type(angle))
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    screen.colormode(255)
+    tim.color(r, g, b)
     for _ in range(sides):
         tim.forward(100)
         tim.left(angle)
@@ -35,6 +41,5 @@ for _ in range(3, 11):
     draw_polygon(_)
 
 
-screen = Screen()
 screen.exitonclick()
 
