@@ -37,13 +37,16 @@ def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
-    screen.colormode(255)
     return r, g, b
 
 
 def draw_polygon(sides):
     """draws a polygon with n sides and random colors"""
     angle = 360 / sides
+    #
+    #   set color mode!!!
+    #
+    screen.colormode(255)
     tim.color(random_color())
     for _ in range(sides):
         tim.forward(100)
